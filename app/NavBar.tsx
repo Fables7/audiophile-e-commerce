@@ -5,9 +5,8 @@ import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <div className="bg-black h-[90px] w-full flex items-center justify-center border-b-1 border-[#979797]">
-      <div className="w-[327px] flex  justify-between">
-        <Image src={Lines} alt="lines" />
+    <div className="bg-black h-[90px] w-full flex items-center justify-center ">
+      <div className="w-[1110px] flex  justify-between">
         <Image src={logo} alt={"logo"} height={25} />
         <Image src={ShoppingCart} alt="shopping cart" />
       </div>
