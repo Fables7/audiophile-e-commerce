@@ -13,10 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 22 65% 57%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 210 10% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -32,14 +32,14 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0;
 
     /* Colors */
-    --orange: 22, 65%, 57%;
-    --orange-hover: 21, 94%, 75%;
-    --black-one: 0, 0%, 6%;
-    --med-gray: 0, 0%, 95%;
-    --light-gray: 0, 0%, 98%;
+    --orange: 22 65% 57%;
+    --orange-hover: 21 94% 75%;
+    --black-one: 0 0% 6%;
+    --med-gray: 0 0% 95%;
+    --light-gray: 0 0% 98%;
   }
 
   .dark {
