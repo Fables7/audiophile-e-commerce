@@ -3,7 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import NavBar from "./NavBar";
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

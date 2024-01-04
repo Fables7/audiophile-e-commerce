@@ -80,4 +80,30 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-[3.5rem]  tracking-[2px];
+  }
+  h2 {
+    @apply text-[2.5rem]  tracking-[1.5px];
+  }
+  h3 {
+    @apply text-[2rem]  tracking-[1.15px];
+  }
+  h4 {
+    @apply text-[1.75rem]  tracking-[2px];
+  }
+  h5 {
+    @apply text-[1.5rem]  tracking-[1.7px];
+  }
+  h6 {
+    @apply text-[1.125rem]  tracking-[1.3px];
+  }
 }
