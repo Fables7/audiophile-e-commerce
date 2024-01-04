@@ -1,12 +1,16 @@
-import { Button } from "@/components/ui/button";
-import React from "react";
+import logo from "@/assets/audiophile-logo.svg";
+import Lines from "@/assets/lines.svg";
+import ShoppingCart from "@/assets/shopping-cart.svg";
+import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <div>
-      <h3>MANROPE</h3>
-      <h4>MANROPE</h4>
-      <Button variant="outline">MANROPE</Button>
+    <div className="bg-black h-[90px] w-full flex items-center justify-center border-b-1 border-[#979797]">
+      <div className="w-[327px] flex  justify-between">
+        <Image src={Lines} alt="lines" />
+        <Image src={logo} alt={"logo"} height={25} />
+        <Image src={ShoppingCart} alt="shopping cart" />
+      </div>
     </div>
   );
 };
