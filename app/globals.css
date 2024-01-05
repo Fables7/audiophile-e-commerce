@@ -40,6 +40,8 @@
     --black-one: 0 0% 6%;
     --med-gray: 0 0% 95%;
     --light-gray: 0 0% 98%;
+    --text: rgb(255, 255, 255, 0.55);
+    --overline-text: rgb(255, 255, 255, 0.3);
   }
 
   .dark {
@@ -81,7 +83,10 @@
     @apply bg-background text-foreground;
   }
   .subtitle {
-    @apply text-[0.813rem] tracking-[1px] font-bold capitalize;
+    @apply text-[0.813rem] tracking-[1px] font-bold uppercase;
+  }
+  .over-line {
+    @apply text-[0.875rem] uppercase tracking-[10px] text-[var(--overline-text)];
   }
   h1,
   h2,
@@ -89,10 +94,10 @@
   h4,
   h5,
   h6 {
-    @apply font-bold capitalize;
+    @apply font-bold uppercase;
   }
   h1 {
-    @apply text-[2.25rem] lg:text-[3.5rem]  tracking-[2px] leading-[40px];
+    @apply text-[2.25rem] lg:text-[3.5rem]  tracking-[2px] leading-[60px];
   }
   h2 {
     @apply text-[2.5rem]  tracking-[1.5px];
@@ -108,5 +113,8 @@
   }
   h6 {
     @apply text-[1.125rem]  tracking-[1.3px];
+  }
+  p {
+    @apply text-[0.938rem] text-[var(--text)] leading-6;
   }
 }
