@@ -35,10 +35,10 @@
     --radius: 0.5rem;
 
     /* Colors */
-    --orange: 22 65% 57%;
+    --orange: #d87d4a;
     --orange-hover: 21 94% 75%;
     --black-one: 0 0% 6%;
-    --med-gray: 0 0% 95%;
+    --med-gray: #f1f1f1;
     --light-gray: 0 0% 98%;
     --text: rgb(255, 255, 255, 0.55);
     --overline-text: rgb(255, 255, 255, 0.3);
