@@ -80,7 +80,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen flex flex-col justify-between;
   }
   .subtitle {
     @apply text-[0.813rem] tracking-[1px] font-bold uppercase;

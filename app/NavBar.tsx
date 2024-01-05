@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 const NavBar = () => {
   return (
-    <div className="bg-black h-[90px] w-full flex items-center justify-center ">
+    <div className="bg-black h-[90px] w-full flex items-center justify-center">
       <div className="w-[1110px] flex  justify-between relative h-full">
         <Image src={logo} alt={"logo"} height={25} />
         <NavMenu />
