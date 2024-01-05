@@ -10,7 +10,7 @@ const HomePage = () => {
     <div>
       <Xx99Mark2Headphones />
       <div className="w-full flex justify-center ">
-        <div className="w-[1110px] flex flex-col gap-40">
+        <div className="w-[1110px] flex flex-col gap-40 pb-60">
           <ProductNav />
           <HomeProducts />
           <SiteInfo />
