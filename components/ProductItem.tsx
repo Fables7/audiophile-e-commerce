@@ -3,18 +3,9 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { Button } from "./ui/button";
 import classNames from "classnames";
+import { ProductItemProps } from "./ProductsItemsList";
 
-interface Props {
-  src: StaticImageData;
-  alt: string;
-  new?: boolean;
-  title: string;
-  description: string;
-  right?: boolean;
-  //   link: string;
-}
-
-const ProductItem = (props: Props) => {
+const ProductItem = (props: ProductItemProps) => {
   const containerClass = classNames({
     "h-[560px] flex justify-between": true,
     "flex-row-reverse": props.right,

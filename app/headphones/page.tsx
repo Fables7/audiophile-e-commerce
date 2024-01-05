@@ -6,6 +6,7 @@ import xx99MarkI from "@/assets/product-xx99-mark-one-headphones/desktop/image-p
 import xx59 from "@/assets/product-xx59-headphones/desktop/image-product.jpg";
 import ProductNav from "@/components/ProductNav";
 import SiteInfo from "@/components/SiteInfo";
+import ProductsItemsList from "@/components/ProductsItemsList";
 
 const products = [
   {
@@ -38,22 +39,10 @@ const HeadphonesPage = () => {
     <div>
       <CategoryHeader title="headphones" />
       <div className="flex  justify-center">
-        <div className="w-[1110px] ">
-          <div className="flex flex-col gap-32 py-40">
-            {products.map((item, index) => (
-              <ProductItem
-                key={index}
-                title={item.title}
-                description={item.description}
-                new={item.new}
-                src={item.src}
-                alt={item.alt}
-                right={item.right}
-              />
-            ))}
-            <ProductNav />
-            <SiteInfo />
-          </div>
+        <div className="w-[1110px] flex flex-col gap-32 py-40">
+          <ProductsItemsList products={products} />
+          <ProductNav />
+          <SiteInfo />
         </div>
       </div>
     </div>
