@@ -100,7 +100,7 @@
     @apply text-[2.25rem] lg:text-[3.5rem]  tracking-[2px] leading-[60px];
   }
   h2 {
-    @apply text-[2.5rem]  tracking-[1.5px];
+    @apply text-[2.5rem]  tracking-[1.5px] leading-[40px];
   }
   h3 {
     @apply text-[2rem]  tracking-[1.15px];
