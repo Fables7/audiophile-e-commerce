@@ -1,12 +1,10 @@
-import CategoryHeader from "@/components/CategoryHeader";
-import ProductItem from "@/components/ProductItem";
-import React from "react";
-import xx99MarkII from "@/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import xx99MarkI from "@/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
 import xx59 from "@/assets/product-xx59-headphones/desktop/image-product.jpg";
+import xx99MarkI from "@/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
+import xx99MarkII from "@/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+import CategoryHeader from "@/components/CategoryHeader";
 import ProductNav from "@/components/ProductNav";
-import SiteInfo from "@/components/SiteInfo";
 import ProductsItemsList from "@/components/ProductsItemsList";
+import SiteInfo from "@/components/SiteInfo";
 
 const products = [
   {
