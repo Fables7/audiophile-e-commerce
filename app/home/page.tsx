@@ -1,9 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Xx99Mark2Headphones from "@/components/images/Xx99Mark2Headphones";
 import ProductNav from "@/components/ProductNav";
-import HomeProducts from "./components/HomeProducts";
 import SiteInfo from "@/components/SiteInfo";
+import Xx99Mark2Headphones from "@/components/images/Xx99Mark2Headphones";
+import HomeProducts from "./components/HomeProducts";
 
 const HomePage = () => {
   return (

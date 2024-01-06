@@ -1,9 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
-import { Button } from "./ui/button";
 import classNames from "classnames";
+import Image from "next/image";
 import { ProductItemProps } from "./ProductsItemsList";
+import { Button } from "./ui/button";
 
 const ProductItem = (props: ProductItemProps) => {
   const containerClass = classNames({

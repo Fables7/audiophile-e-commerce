@@ -1,6 +1,4 @@
-import React from "react";
 import ProductItem from "./ProductItem";
-import { StaticImageData } from "next/image";
 
 export type ProductItemProps = {
   name: string;

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 import "./globals.css";
-import Footer from "./Footer";
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["400"] });
 

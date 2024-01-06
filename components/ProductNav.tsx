@@ -1,10 +1,8 @@
-import React from "react";
-import Image from "next/image";
+import earphones from "@/public/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import headphones from "@/public/assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakers from "@/public/assets/shared/desktop/image-category-thumbnail-speakers.png";
-import earphones from "@/public/assets/shared/desktop/image-category-thumbnail-earphones.png";
-import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const products = [
