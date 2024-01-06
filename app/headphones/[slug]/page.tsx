@@ -5,6 +5,7 @@ import ProductItem from "@/components/ProductItem";
 import ProductDetails from "@/components/ProductDetails";
 import ProductNav from "@/components/ProductNav";
 import SiteInfo from "@/components/SiteInfo";
+import ProductSuggestions from "@/components/ProductSuggestions";
 
 const HeadphoneProductPage = ({ params }: { params: { slug: string } }) => {
   const product = data.headphones.find(
@@ -16,6 +17,7 @@ const HeadphoneProductPage = ({ params }: { params: { slug: string } }) => {
     <Wrapper>
       <ProductItem product={product} shop />
       <ProductDetails product={product} />
+      <ProductSuggestions slug={params.slug} />
       <ProductNav />
       <SiteInfo />
     </Wrapper>
