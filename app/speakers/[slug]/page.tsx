@@ -2,9 +2,7 @@ import ProductPage from "@/app/ProductPage";
 import data from "@/data.json";
 
 const HeadphoneProductPage = ({ params }: { params: { slug: string } }) => {
-  const product = data.headphones.find(
-    (product) => product.slug === params.slug
-  );
+  const product = data.speakers.find((product) => product.slug === params.slug);
 
   return <ProductPage product={product} slug={params.slug} />;
 };
