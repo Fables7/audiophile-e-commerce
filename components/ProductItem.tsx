@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import AddToCart from "./AddToCart";
 
 export type ProductItemProps = {
   slug?: string;
@@ -37,11 +38,14 @@ const ProductItem = ({ product, shop, right, category }: Props) => {
         {shop && (
           <>
             <h6>${product.price?.toLocaleString()}</h6>
+            <AddToCart />
           </>
         )}
-        <Link href={`/${category}/${product.slug}`}>
-          <Button>see product</Button>
-        </Link>
+        {!shop && (
+          <Link href={`/${category}/${product.slug}`}>
+            <Button>see product</Button>
+          </Link>
+        )}
       </div>
     </div>
   );
