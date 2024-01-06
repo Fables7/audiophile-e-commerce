@@ -1,3 +1,4 @@
+import DialogWrapper from "@/components/DialogWrapper";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Footer from "./Footer";
@@ -19,10 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <NavBar />
-
-        <main>{children}</main>
-        <Footer />
+        <DialogWrapper>
+          <NavBar />
+          <main>{children}</main>
+          <Footer />
+        </DialogWrapper>
       </body>
     </html>
   );
