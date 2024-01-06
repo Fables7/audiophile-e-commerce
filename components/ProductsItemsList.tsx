@@ -19,17 +19,20 @@ interface Props {
 const ProductsItemsList = ({ products }: Props) => {
   return (
     <>
-      {products.map((item, index) => (
-        <ProductItem
-          key={index}
-          name={item.name}
-          description={item.description}
-          new={item.new}
-          image={item.image}
-          alt={item.alt}
-          right={item.right}
-        />
-      ))}
+      {products.map((item, index) => {
+        const right = index % 2 !== 0;
+        return (
+          <ProductItem
+            key={index}
+            name={item.name}
+            description={item.description}
+            new={item.new}
+            image={item.image}
+            alt={item.alt}
+            right={right}
+          />
+        );
+      })}
     </>
   );
 };
