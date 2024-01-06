@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import patternCircles from "@/assets/home/desktop/pattern-circles.svg";
-import zx9speaker from "@/assets/home/desktop/image-speaker-zx9.png";
-import zx7speaker from "@/assets/home/desktop/image-speaker-zx7.jpg";
-import yx1earphones from "@/assets/home/desktop/image-earphones-yx1.jpg";
+import patternCircles from "@/public/assets/home/desktop/pattern-circles.svg";
+import zx9speaker from "@/public/assets/home/desktop/image-speaker-zx9.png";
+import zx7speaker from "@/public/assets/home/desktop/image-speaker-zx7.jpg";
+import yx1earphones from "@/public/assets/home/desktop/image-earphones-yx1.jpg";
 import { Button } from "@/components/ui/button";
 
 const Zx9Speaker = () => {

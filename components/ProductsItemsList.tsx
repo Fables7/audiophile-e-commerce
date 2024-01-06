@@ -3,12 +3,12 @@ import ProductItem from "./ProductItem";
 import { StaticImageData } from "next/image";
 
 export type ProductItemProps = {
-  title: string;
+  name: string;
   description: string;
   new?: boolean;
-  src: StaticImageData;
+  image: string;
   alt: string;
-  right?: boolean;
+  right?: boolean | undefined;
   link?: string;
 };
 
@@ -22,10 +22,10 @@ const ProductsItemsList = ({ products }: Props) => {
       {products.map((item, index) => (
         <ProductItem
           key={index}
-          title={item.title}
+          name={item.name}
           description={item.description}
           new={item.new}
-          src={item.src}
+          image={item.image}
           alt={item.alt}
           right={item.right}
         />

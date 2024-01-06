@@ -1,5 +1,5 @@
-import logo from "@/assets/audiophile-logo.svg";
-import ShoppingCart from "@/assets/shopping-cart.svg";
+import logo from "@/public/assets/audiophile-logo.svg";
+import ShoppingCart from "@/public/assets/shopping-cart.svg";
 import Image from "next/image";
 import NavMenu from "./NavMenu";
 import { Separator } from "@/components/ui/separator";

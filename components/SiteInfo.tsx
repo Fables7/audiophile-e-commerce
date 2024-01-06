@@ -1,5 +1,5 @@
 import React from "react";
-import imageBestGear from "@/assets/shared/desktop/image-best-gear.jpg";
+import imageBestGear from "@/public/assets/shared/desktop/image-best-gear.jpg";
 import Image from "next/image";
 
 const SiteInfo = () => {

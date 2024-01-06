@@ -12,12 +12,12 @@ const ProductItem = (props: ProductItemProps) => {
   });
   return (
     <div className={containerClass}>
-      <Image src={props.src} alt={props.alt} height={560} />
+      <Image src={props.image} alt={props.alt} height={560} width={560} />
       <div className="flex flex-col gap-4 items-start justify-center">
         {props.new && (
           <p className="over-line text-[var(--orange)]">new product</p>
         )}
-        <h2 className="w-[445px]">{props.title}</h2>
+        <h2 className="w-[445px]">{props.name}</h2>
         <p className="text-black/50 w-[445px]">{props.description}</p>
         <Button>see product</Button>
       </div>

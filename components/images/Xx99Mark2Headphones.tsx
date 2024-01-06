@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import mobile from "@/assets/home/mobile/image-header.jpg";
-import desktop from "@/assets/headphones-header.svg";
+import mobile from "@/public/assets/home/mobile/image-header.jpg";
+import desktop from "@/public/assets/headphones-header.svg";
 import { Button } from "../ui/button";
 
 const Xx99Mark2Headphones = () => {

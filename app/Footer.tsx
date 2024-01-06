@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/assets/audiophile-logo.svg";
+import logo from "@/public/assets/audiophile-logo.svg";
 import NavMenu from "./NavMenu";
 import FacebookIcon from "@/components/icons/FacebookIcon";
 import TwitterIcon from "@/components/icons/TwitterIcon";
