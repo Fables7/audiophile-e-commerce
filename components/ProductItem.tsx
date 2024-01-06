@@ -42,7 +42,9 @@ const ProductItem = ({ product, shop, right, category }: Props) => {
         {product.new && (
           <p className="over-line text-[var(--orange)]">new product</p>
         )}
-        <h2 className="w-[445px]">{product.name}</h2>
+        <h2 className="w-[445px]">
+          {product.name} {category === "speakers" ? "speaker" : category}
+        </h2>
         <p className="text-black/50 w-[445px]">{product.description}</p>
         {shop && (
           <>

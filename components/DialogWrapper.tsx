@@ -4,7 +4,7 @@ import CartDialog from "./CartDialog";
 const DialogWrapper = ({ children }: PropsWithChildren) => {
   return (
     <Dialog>
-      <DialogContent>
+      <DialogContent className="w-[377px]">
         <CartDialog />
       </DialogContent>
       {children}
