@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ["latin"], weight: ["700"] });
+const manrope = Manrope({ subsets: ["latin"], weight: ["700", "500"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -13,6 +13,15 @@ export type ProductItemProps = {
   alt: string;
   price?: number;
   link?: string;
+  showcase?: {
+    image: string;
+    alt: string;
+  }[];
+  features?: string[];
+  details?: {
+    quantity: number;
+    item: string;
+  }[];
 };
 interface Props {
   category?: "headphones" | "speakers" | "earphones";
