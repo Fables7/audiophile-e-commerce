@@ -1,22 +1,26 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export type ProductItemProps = {
+  slug?: string;
   name: string;
   description: string;
   new?: boolean;
   image: string;
   alt: string;
+  price?: number;
   link?: string;
 };
 interface Props {
+  category?: "headphones" | "speakers" | "earphones";
   product: ProductItemProps;
   shop?: boolean;
   right?: boolean | undefined;
 }
 
-const ProductItem = ({ product, shop, right }: Props) => {
+const ProductItem = ({ product, shop, right, category }: Props) => {
   const containerClass = classNames({
     "h-[560px] flex justify-between": true,
     "flex-row-reverse": right,
@@ -30,7 +34,14 @@ const ProductItem = ({ product, shop, right }: Props) => {
         )}
         <h2 className="w-[445px]">{product.name}</h2>
         <p className="text-black/50 w-[445px]">{product.description}</p>
-        <Button>see product</Button>
+        {shop && (
+          <>
+            <h6>${product.price?.toLocaleString()}</h6>
+          </>
+        )}
+        <Link href={`/${category}/${product.slug}`}>
+          <Button>see product</Button>
+        </Link>
       </div>
     </div>
   );

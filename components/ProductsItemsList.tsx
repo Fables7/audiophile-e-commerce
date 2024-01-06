@@ -3,14 +3,22 @@ import { ProductItemProps } from "./ProductItem";
 
 interface Props {
   products: ProductItemProps[];
+  category: "headphones" | "speakers" | "earphones";
 }
 
-const ProductsItemsList = ({ products }: Props) => {
+const ProductsItemsList = ({ products, category }: Props) => {
   return (
     <>
       {products.map((item, index) => {
         const right = index % 2 !== 0;
-        return <ProductItem key={index} product={item} right={right} />;
+        return (
+          <ProductItem
+            category={category}
+            key={index}
+            product={item}
+            right={right}
+          />
+        );
       })}
     </>
   );
