@@ -11,7 +11,7 @@ const Detail = ({ quantity, item }: DetailProps) => {
   return (
     <div className="flex ">
       <p className="text-[var(--orange)] mr-4 w-6">{quantity}x</p>
-      <p className="text-black/50 font-medium">{item}</p>
+      <p className="text-black/50 font-medium capitalize">{item}</p>
     </div>
   );
 };

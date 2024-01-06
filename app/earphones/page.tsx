@@ -10,7 +10,7 @@ const EarphonesPage = () => {
     <div>
       <CategoryHeader title="Earphones" />
       <Wrapper>
-        <ProductsItemsList products={data.earphones} />
+        <ProductsItemsList category="earphones" products={data.earphones} />
         <ProductNav />
         <SiteInfo />
       </Wrapper>
