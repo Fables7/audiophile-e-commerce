@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import ReduxProvider from "@/providers/reduxProvider";
 import "./globals.css";
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["700", "500"] });
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <DialogWrapper>
-          <NavBar />
-          <main>{children}</main>
-          <Footer />
-        </DialogWrapper>
+        <ReduxProvider>
+          <DialogWrapper>
+            <NavBar />
+            <main>{children}</main>
+            <Footer />
+          </DialogWrapper>
+        </ReduxProvider>
       </body>
     </html>
   );
