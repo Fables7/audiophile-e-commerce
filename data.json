@@ -2,12 +2,49 @@
   "headphones": [
     {
       "id": 1,
+      "slug": "xx99-mark-two-headphones",
       "name": "XX99 Mark II Headphones",
       "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
       "image": "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
-      "alt": "xx99 mark II headphones",
+      "alt": "xx99 mark two headphones",
+      "new": true,
       "price": 2999,
-      "new": true
+      "features": [
+        "As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.",
+        "From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector."
+      ],
+      "includes": [
+        {
+          "quantity": 1,
+          "item": "Headphone unit"
+        },
+        {
+          "quantity": 2,
+          "item": "Replacement earcups"
+        },
+        {
+          "quantity": 1,
+          "item": "User manual"
+        },
+        {
+          "quantity": 1,
+          "item": "3.5mm 5m audio cable"
+        }
+      ],
+      "showcase": [
+        {
+          "image": "",
+          "alt": ""
+        },
+        {
+          "image": "",
+          "alt": ""
+        },
+        {
+          "image": "",
+          "alt": ""
+        }
+      ]
     },
     {
       "id": 2,

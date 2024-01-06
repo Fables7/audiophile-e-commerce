@@ -1,14 +1,5 @@
 import ProductItem from "./ProductItem";
-
-export type ProductItemProps = {
-  name: string;
-  description: string;
-  new?: boolean;
-  image: string;
-  alt: string;
-  right?: boolean | undefined;
-  link?: string;
-};
+import { ProductItemProps } from "./ProductItem";
 
 interface Props {
   products: ProductItemProps[];
@@ -19,17 +10,7 @@ const ProductsItemsList = ({ products }: Props) => {
     <>
       {products.map((item, index) => {
         const right = index % 2 !== 0;
-        return (
-          <ProductItem
-            key={index}
-            name={item.name}
-            description={item.description}
-            new={item.new}
-            image={item.image}
-            alt={item.alt}
-            right={right}
-          />
-        );
+        return <ProductItem key={index} product={item} right={right} />;
       })}
     </>
   );
