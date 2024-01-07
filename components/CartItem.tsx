@@ -28,7 +28,7 @@ const CartItem = ({ image, name }: CartItemProps) => {
       <Counter
         count={count}
         setCount={setCount}
-        className="h-[32px] w-[96px]"
+        className="h-[40px] w-[96px] "
       />
     </div>
   );

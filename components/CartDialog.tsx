@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "./ui/button";
 import CartItem from "./CartItem";
 import data from "../data.json";
+import Link from "next/link";
+import { DialogClose } from "./ui/dialog";
 
 const CartDialog = () => {
   const headphones = data.headphones;
@@ -17,7 +19,11 @@ const CartDialog = () => {
         <p className="text-black/50">TOTAL</p>
         <h6>$ 0</h6>
       </div>
-      <Button>Checkout</Button>
+      <Link href="/checkout">
+        <DialogClose asChild>
+          <Button className="w-full">Checkout</Button>
+        </DialogClose>
+      </Link>
     </div>
   );
 };

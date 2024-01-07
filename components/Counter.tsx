@@ -14,8 +14,8 @@ const Counter = ({ count, setCount, className }: CounterProps) => {
     setCount((prev) => prev - 1);
   };
   const baseClass = classNames(
-    "w-[120px] h-[48px] flex justify-between items-center bg-[var(--med-gray)] px-5",
-    className
+    className,
+    "w-[120px] h-[48px] flex justify-between items-center bg-[var(--med-gray)] px-5"
   );
   return (
     <div className={baseClass}>
