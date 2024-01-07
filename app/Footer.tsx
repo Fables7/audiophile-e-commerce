@@ -20,8 +20,9 @@ const icons = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black h-[365px] flex justify-center">
+    <footer className="bg-black h-[365px] flex justify-center relative">
       <div className="w-[1110px]  pt-20 flex justify-between">
+        <div className="absolute w-[101px] h-[4px] bg-[var(--orange)] top-0" />
         <div className="flex flex-col gap-8">
           <Image src={logo} alt="logo" />
           <p className="w-[540px]">
