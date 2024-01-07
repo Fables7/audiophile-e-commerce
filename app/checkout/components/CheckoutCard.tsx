@@ -38,7 +38,7 @@ const CheckoutCard = () => {
     console.log(values);
   };
   return (
-    <Card className="border-0 shadow-none bg-white h-[1126px] w-[730px]">
+    <Card className="border-0 shadow-none bg-white h-[1126px] min-w-[730px]">
       <CardHeader>
         <CardTitle>checkout</CardTitle>
       </CardHeader>
