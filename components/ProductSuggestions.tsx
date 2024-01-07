@@ -7,16 +7,18 @@ const Item = ({
   thumbnail,
   name,
   slug,
+  category,
 }: {
   thumbnail: string;
   name: string;
   slug: string;
+  category: string;
 }) => {
   return (
     <div className="flex flex-col items-center gap-10">
       <Image src={thumbnail} alt="" width={350} height={318} />
       <h5>{name}</h5>
-      <Link href={`/headphones/${slug}`}>
+      <Link href={`/${category}/${slug}`}>
         <Button>see product</Button>
       </Link>
     </div>
@@ -35,14 +37,23 @@ const ProductSuggestions = ({ slug }: { slug: string }) => {
     <div className="flex flex-col items-center gap-16">
       <h3>you may also like</h3>
       <div className="flex justify-between w-full">
-        {randomProducts.map((product, index) => (
-          <Item
-            key={index}
-            thumbnail={product.thumbnail}
-            name={product.name}
-            slug={product.slug}
-          />
-        ))}
+        {randomProducts.map((product, index) => {
+          const category = data.headphones.find(
+            (item) => item.slug === product.slug
+          )
+            ? "headphones"
+            : "speakers";
+
+          return (
+            <Item
+              key={index}
+              thumbnail={product.thumbnail}
+              name={product.name}
+              slug={product.slug}
+              category={category}
+            />
+          );
+        })}
       </div>
     </div>
   );
