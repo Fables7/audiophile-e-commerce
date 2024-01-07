@@ -1,8 +1,15 @@
 import React from "react";
 import Wrapper from "@/components/Wrapper";
+import CheckoutCard from "./components/CheckoutCard";
 
 const CheckoutPage = () => {
-  return <Wrapper>hello</Wrapper>;
+  return (
+    <div className="border-2 bg-[var(--med-gray)]">
+      <Wrapper>
+        <CheckoutCard />
+      </Wrapper>
+    </div>
+  );
 };
 
 export default CheckoutPage;
