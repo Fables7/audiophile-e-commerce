@@ -6,10 +6,13 @@ import Image from "next/image";
 interface CartItemProps {
   image: string;
   name: string;
+  price: number;
+  id: string;
+  quantity: number;
 }
 
-const CartItem = ({ image, name }: CartItemProps) => {
-  const [count, setCount] = React.useState(1);
+const CartItem = ({ image, name, price, id, quantity }: CartItemProps) => {
+  const [count, setCount] = React.useState(quantity);
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-4">
@@ -22,13 +25,14 @@ const CartItem = ({ image, name }: CartItemProps) => {
         />
         <div>
           <p className="text-black font-bold uppercase">{name}</p>
-          <p className="text-black/50 font-bold">$ 2,999</p>
+          <p className="text-black/50 font-bold">$ {price * count}</p>
         </div>
       </div>
       <Counter
         count={count}
         setCount={setCount}
         className="h-[40px] w-[96px] "
+        id={id}
       />
     </div>
   );

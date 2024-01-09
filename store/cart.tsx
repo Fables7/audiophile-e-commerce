@@ -8,46 +8,58 @@ interface CartItem {
   cartImage: string;
 }
 
+export type RootState = {
+  cart: {
+    cart: CartItem[];
+    total: number;
+  };
+};
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [] as CartItem[],
+    total: 0,
   },
   reducers: {
     addToCart: (state, action) => {
-      const item = action.payload;
-      const itemInCart = state.cart.find((i) => i.id === item.id);
+      const { product, quantity } = action.payload;
+      const itemInCart = state.cart.find((i) => i.id === product.id);
       if (itemInCart) {
-        itemInCart.quantity + item.quantity;
-        itemInCart.price + item.price * item.quantity;
+        itemInCart.quantity + quantity;
+        state.total += product.price * quantity;
       } else {
+        console.log(product);
         state.cart.push({
-          ...item,
-          quantity: item.quantity,
-          price: item.price * item.quantity,
+          ...product,
+          quantity: quantity,
+          price: product.price,
         });
+        state.total += product.price * quantity;
       }
     },
     clearCart: (state) => {
       state.cart = [];
+      state.total = 0;
     },
     increaseItemQuantity: (state, action) => {
-      const item = action.payload;
-      const itemInCart = state.cart.find((i) => i.id === item.id);
+      const id = action.payload;
+      const itemInCart = state.cart.find((i) => i.id === id);
       if (itemInCart) {
         itemInCart.quantity += 1;
-        itemInCart.price + item.price;
+        state.total += itemInCart.price;
       }
     },
     decreaseItemQuantity: (state, action) => {
-      const item = action.payload;
-      const itemInCart = state.cart.find((i) => i.id === item.id);
+      const id = action.payload;
+      const itemInCart = state.cart.find((i) => i.id === id);
       if (itemInCart) {
         if (itemInCart.quantity === 1) {
-          state.cart = state.cart.filter((i) => i.id !== item.id);
+          state.total - itemInCart.price;
+          state.cart = state.cart.filter((i) => i.id !== id);
         }
         itemInCart.quantity -= 1;
-        itemInCart.price - item.price;
+        state.total -= itemInCart.price;
       }
     },
   },

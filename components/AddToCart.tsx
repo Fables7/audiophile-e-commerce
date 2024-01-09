@@ -4,12 +4,13 @@ import { Button } from "./ui/button";
 import Counter from "./Counter";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/cart";
+import { ProductItemProps } from "./ProductItem";
 
-const AddToCart = () => {
+const AddToCart = ({ product }: { product: ProductItemProps }) => {
   const [count, setCount] = React.useState(1);
   const dispatch = useDispatch();
   const handleAddToCart = () => {
-    dispatch(addToCart({}));
+    dispatch(addToCart({ product, quantity: count }));
   };
 
   return (

@@ -49,7 +49,7 @@ const ProductItem = ({ product, shop, right, category }: Props) => {
         {shop && (
           <>
             <h6>${product.price?.toLocaleString()}</h6>
-            <AddToCart />
+            <AddToCart product={product} />
           </>
         )}
         {!shop && (

@@ -1,17 +1,27 @@
+"use client";
 import React from "react";
 import classNames from "classnames";
+import { increaseItemQuantity, decreaseItemQuantity } from "@/store/cart";
+import { useDispatch } from "react-redux";
 
 interface CounterProps {
   count: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
   className?: string;
+
+  id?: string;
 }
 
-const Counter = ({ count, setCount, className }: CounterProps) => {
-  const increaseCount = () => setCount((prev) => prev + 1);
+const Counter = ({ count, setCount, className, id }: CounterProps) => {
+  const dispatch = useDispatch();
+  const increaseCount = () => {
+    setCount((prev) => prev + 1);
+    if (id) dispatch(increaseItemQuantity(id));
+  };
   const decreaseCount = () => {
-    if (count === 1) return;
+    if (count === 1 && !id) return;
     setCount((prev) => prev - 1);
+    if (id) dispatch(decreaseItemQuantity(id));
   };
   const baseClass = classNames(
     className,
