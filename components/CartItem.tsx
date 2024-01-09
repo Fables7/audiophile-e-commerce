@@ -25,7 +25,9 @@ const CartItem = ({ image, name, price, id, quantity }: CartItemProps) => {
         />
         <div>
           <p className="text-black font-bold uppercase">{name}</p>
-          <p className="text-black/50 font-bold">$ {price * count}</p>
+          <p className="text-black/50 font-bold">
+            $ {(price * count).toLocaleString()}
+          </p>
         </div>
       </div>
       <Counter

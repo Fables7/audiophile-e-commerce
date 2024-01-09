@@ -5,6 +5,7 @@ import zx9speaker from "@/public/assets/home/desktop/image-speaker-zx9.png";
 import zx7speaker from "@/public/assets/home/desktop/image-speaker-zx7.jpg";
 import yx1earphones from "@/public/assets/home/desktop/image-earphones-yx1.jpg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Zx9Speaker = () => {
   return (
@@ -15,7 +16,9 @@ const Zx9Speaker = () => {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Button className="bg-black hover:bg-[#4C4C4C]">See Product</Button>
+        <Link href="/speakers/zx9-speaker">
+          <Button className="bg-black hover:bg-[#4C4C4C]">See Product</Button>
+        </Link>
       </div>
       <Image
         src={zx9speaker}
@@ -38,9 +41,11 @@ const Zx7Speaker = () => {
       <Image src={zx7speaker} alt="ZX7 Speaker" fill />
       <div className="absolute flex flex-col items-start gap-5">
         <h4>zx7 speaker</h4>
-        <Button variant="outline" className=" bg-transparent">
-          See Product
-        </Button>
+        <Link href="/speakers/zx7-speaker">
+          <Button variant="outline" className=" bg-transparent">
+            See Product
+          </Button>
+        </Link>
       </div>
     </div>
   );
@@ -54,9 +59,11 @@ const Yx1Earphones = () => {
       </div>
       <div className="w-[540px] bg-[var(--med-gray)] rounded-md flex flex-col items-start gap-4 justify-center pl-20">
         <h4>yx1 earphones</h4>
-        <Button variant="outline" className="bg-transparent">
-          see product
-        </Button>
+        <Link href="/earphones/yx1-wireless-earphones">
+          <Button variant="outline" className="bg-transparent">
+            see product
+          </Button>
+        </Link>
       </div>
     </div>
   );

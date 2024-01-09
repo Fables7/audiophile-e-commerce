@@ -3,6 +3,7 @@ import Image from "next/image";
 import mobile from "@/public/assets/home/mobile/image-header.jpg";
 import desktop from "@/public/assets/headphones-header.svg";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Xx99Mark2Headphones = () => {
   return (
@@ -20,7 +21,9 @@ const Xx99Mark2Headphones = () => {
             made for the passionate music enthusiast
           </p>
           <div>
-            <Button>SEE PRODUCT</Button>
+            <Link href="/headphones/xx99-mark-two-headphones">
+              <Button>SEE PRODUCT</Button>
+            </Link>
           </div>
         </div>
         <Image
