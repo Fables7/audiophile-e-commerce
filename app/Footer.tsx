@@ -36,11 +36,14 @@ const Footer = () => {
         <div>
           <NavMenu />
           <div className="flex items-center gap-4 justify-end mt-20">
-            {icons.map((item, index) => (
-              <a key={index} className="hover:cursor-pointer">
-                <item.icon className="fill-white hover:fill-[var(--orange)]" />
-              </a>
-            ))}
+            {icons.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <a key={index} className="hover:cursor-pointer">
+                  <Icon className="fill-white hover:fill-[var(--orange)]" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
