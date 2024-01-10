@@ -9,9 +9,17 @@ interface CartItemProps {
   price: number;
   id: string;
   quantity: number;
+  checkout?: boolean;
 }
 
-const CartItem = ({ image, name, price, id, quantity }: CartItemProps) => {
+const CartItem = ({
+  image,
+  name,
+  price,
+  id,
+  quantity,
+  checkout,
+}: CartItemProps) => {
   const [count, setCount] = React.useState(quantity);
   return (
     <div className="flex items-center justify-between">
@@ -30,12 +38,16 @@ const CartItem = ({ image, name, price, id, quantity }: CartItemProps) => {
           </p>
         </div>
       </div>
-      <Counter
-        count={count}
-        setCount={setCount}
-        className="h-[40px] w-[96px] "
-        id={id}
-      />
+      {checkout ? (
+        <p className="text-black/50">x{quantity}</p>
+      ) : (
+        <Counter
+          count={count}
+          setCount={setCount}
+          className="h-[40px] w-[96px] "
+          id={id}
+        />
+      )}
     </div>
   );
 };
