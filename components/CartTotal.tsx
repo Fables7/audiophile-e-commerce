@@ -2,14 +2,19 @@
 import { RootState } from "@/store/cart";
 import React from "react";
 import { useSelector } from "react-redux";
+import CartDetail from "./CartDetail";
 
-const CartTotal = () => {
+interface Props {
+  vat?: number;
+}
+
+const CartTotal = ({ vat }: Props) => {
   const total = useSelector((state: RootState) => state.cart.total);
   return (
-    <div className="flex  justify-between">
-      <p className="text-black/50">TOTAL</p>
-      <h6>$ {total.toLocaleString()}</h6>
-    </div>
+    <CartDetail
+      label={vat ? "vat (included)" : "Total"}
+      price={vat ? (total / 100) * vat : total}
+    />
   );
 };
 
