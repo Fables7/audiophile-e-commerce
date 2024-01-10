@@ -26,7 +26,8 @@ export const cartSlice = createSlice({
       const { product, quantity } = action.payload;
       const itemInCart = state.cart.find((i) => i.id === product.id);
       if (itemInCart) {
-        itemInCart.quantity + quantity;
+        itemInCart.quantity += quantity;
+        console.log(itemInCart.quantity);
         state.total += product.price * quantity;
       } else {
         console.log(product);
@@ -55,8 +56,9 @@ export const cartSlice = createSlice({
       const itemInCart = state.cart.find((i) => i.id === id);
       if (itemInCart) {
         if (itemInCart.quantity === 1) {
-          state.total - itemInCart.price;
+          state.total -= itemInCart.price;
           state.cart = state.cart.filter((i) => i.id !== id);
+          return;
         }
         itemInCart.quantity -= 1;
         state.total -= itemInCart.price;
@@ -64,6 +66,11 @@ export const cartSlice = createSlice({
     },
   },
 });
+
+export const getItemQuantity = (state: RootState, id: string) => {
+  const itemInCart = state.cart.cart.find((i) => i.id === id);
+  return itemInCart?.quantity || 0;
+};
 
 export const {
   addToCart,
