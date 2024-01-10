@@ -12,6 +12,8 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import classNames from "classnames";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -25,6 +27,9 @@ const formSchema = z.object({
   zipCode: z.string().min(5),
   city: z.string().min(3),
   country: z.string().min(3),
+  paymentMethod: z.enum(["e-money", "cash-on-delivery"]),
+  eMoneyNumber: z.string().min(9).max(9),
+  eMoneyPin: z.string().min(4).max(4),
 });
 
 const CheckoutCard = () => {
@@ -32,13 +37,14 @@ const CheckoutCard = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      paymentMethod: "e-money",
     },
   });
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
   };
   return (
-    <Card className="border-0 shadow-none bg-white h-[1126px] min-w-[730px]">
+    <Card className="border-0 shadow-none bg-white py-8 px-4 min-w-[730px]">
       <CardHeader>
         <CardTitle>checkout</CardTitle>
       </CardHeader>
@@ -139,6 +145,76 @@ const CheckoutCard = () => {
               />
             </div>
             <p className="subtitle text-[var(--orange)]">payment details</p>
+            <FormField
+              control={form.control}
+              name="paymentMethod"
+              render={({ field }) => (
+                <FormItem className="grid grid-cols-2 gap-4">
+                  <FormLabel>Payment Method</FormLabel>
+                  <FormControl className="flex flex-col gap-4">
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem
+                        className={classNames({
+                          "flex items-center space-x-3 space-y-0 border h-[56px] border-input px-3 py-2 rounded-md":
+                            true,
+                          "border-[var(--orange)]": field.value === "e-money",
+                        })}
+                      >
+                        <FormControl>
+                          <RadioGroupItem value="e-money" />
+                        </FormControl>
+                        <FormLabel>e-Money</FormLabel>
+                      </FormItem>
+                      <FormItem
+                        className={classNames({
+                          "flex items-center space-x-3 space-y-0 border h-[56px] border-input px-3 py-2 rounded-md":
+                            true,
+                          "border-[var(--orange)]":
+                            field.value === "cash-on-delivery",
+                        })}
+                      >
+                        <FormControl>
+                          <RadioGroupItem value="cash-on-delivery" />
+                        </FormControl>
+                        <FormLabel>Cash on Delivery</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            {form.getValues("paymentMethod") === "e-money" && (
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="eMoneyNumber"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>e-Money Number</FormLabel>
+                      <FormControl>
+                        <Input placeholder="123456789" {...field} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="eMoneyPin"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>e-Money PIN</FormLabel>
+                      <FormControl>
+                        <Input placeholder="1234" {...field} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
+            )}
           </form>
         </Form>
       </CardContent>
