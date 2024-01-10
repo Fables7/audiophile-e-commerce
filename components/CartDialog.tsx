@@ -30,9 +30,16 @@ const CartDialog = () => {
           ))}
         </div>
         <CartTotal />
-        <Link href="/checkout">
+        <Link
+          href="/checkout"
+          className={cart.length === 0 ? "pointer-events-none" : ""}
+          aria-disabled={cart.length === 0}
+          tabIndex={cart.length === 0 ? -1 : undefined}
+        >
           <DialogClose asChild>
-            <Button className="w-full">Checkout</Button>
+            <Button disabled={cart.length === 0} className="w-full">
+              Checkout
+            </Button>
           </DialogClose>
         </Link>
       </div>
