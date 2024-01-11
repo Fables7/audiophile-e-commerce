@@ -28,6 +28,7 @@ const CheckoutSummary = () => {
             price={item.price}
             id={item.id}
             quantity={item.quantity}
+            short={item.short}
             checkout
           />
         ))}

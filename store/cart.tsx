@@ -6,12 +6,14 @@ interface CartItem {
   price: number;
   quantity: number;
   cartImage: string;
+  short?: string;
 }
 
 export type RootState = {
   cart: {
     cart: CartItem[];
     total: number;
+    purchases: { items: CartItem[]; total: number };
   };
 };
 
@@ -19,6 +21,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [] as CartItem[],
+    purchases: { items: [] as CartItem[], total: 0 },
     total: 0,
   },
   reducers: {
@@ -40,6 +43,12 @@ export const cartSlice = createSlice({
       }
     },
     clearCart: (state) => {
+      state.cart = [];
+      state.total = 0;
+    },
+    purchaseItems: (state) => {
+      state.purchases.items = state.cart;
+      state.purchases.total = state.total;
       state.cart = [];
       state.total = 0;
     },
@@ -77,6 +86,7 @@ export const {
   clearCart,
   increaseItemQuantity,
   decreaseItemQuantity,
+  purchaseItems,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

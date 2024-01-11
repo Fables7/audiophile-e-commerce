@@ -8,28 +8,42 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { RootState, clearCart } from "@/store/cart";
+import { RootState, purchaseItems } from "@/store/cart";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const SuccessModal = ({ total }: { total: number }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const Item = useSelector((state: RootState) => state.cart.cart[0]);
-  const cartLength = useSelector((state: RootState) => state.cart.cart.length);
-  if (!Item) return null;
+  const [openList, setOpenList] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const { items: purchases, total: purchasesTotal } = useSelector(
+    (state: RootState) => state.cart.purchases
+  );
+  const purchasesLength = purchases.length;
+
+  const list = openList ? purchases : purchases.slice(0, 1);
 
   const handleBackToHome = () => {
     router.push("/home");
-    dispatch(clearCart());
   };
 
   return (
-    <Dialog>
+    <Dialog open={open}>
       <DialogTrigger>
-        <Button disabled={total === 0}>continue & pay</Button>
+        <Button
+          onClick={() => {
+            setOpen(true);
+            dispatch(purchaseItems());
+          }}
+          disabled={total === 0}
+        >
+          continue & pay
+        </Button>
       </DialogTrigger>
 
       <DialogContent className="left-[50%] top-[30%] px-9 min-w-[540px] gap-10">
@@ -39,7 +53,7 @@ const SuccessModal = ({ total }: { total: number }) => {
           width={64}
           height={64}
         />
-        <DialogHeader>
+        <DialogHeader className="flex gap-4">
           <DialogTitle>
             <h3 className="w-[284px]">thank you for your order</h3>
           </DialogTitle>
@@ -47,28 +61,38 @@ const SuccessModal = ({ total }: { total: number }) => {
             You will receive an email confirmation shortly.
           </p>
         </DialogHeader>
-        <div className="min-w-[444px] h-[140px] bg-[var(--med-gray)] rounded-md flex justify-between">
-          <div className="border border-500-red flex-1 px-6 flex flex-col justify-center gap-2">
-            <CartItem
-              image={Item.cartImage}
-              name={Item.name}
-              price={Item.price}
-              id={Item.id}
-              quantity={Item.quantity}
-              checkout
-            />
-            {cartLength > 1 && (
+        <div className="min-w-[444px]  min-h-[140px] max-h-[270px] bg-[var(--med-gray)] rounded-md flex justify-between">
+          <div className="flex-1 px-6 pr-5 py-5 box-border flex flex-col justify-center gap-2">
+            <ScrollArea className="h-full  pr-4">
+              {list.map((item, index) => (
+                <CartItem
+                  key={index}
+                  image={item.cartImage}
+                  name={item.name}
+                  price={item.price}
+                  id={item.id}
+                  quantity={item.quantity}
+                  short={item?.short}
+                  checkout
+                />
+              ))}
+            </ScrollArea>
+            {purchasesLength > 1 && (
               <>
                 <Separator />
-                <p className="text-black/50 text-center">
-                  and {cartLength - 1} other item(s)
-                </p>
+                <button onClick={() => setOpenList(!openList)}>
+                  <p className="text-black/50 text-center">
+                    {openList
+                      ? "View less"
+                      : `and ${purchasesLength - 1} other item(s)`}
+                  </p>
+                </button>
               </>
             )}
           </div>
-          <div className="w-[198px] bg-black h-full flex flex-col px-7 justify-center">
+          <div className="w-[198px] bg-black h-full flex flex-col px-7 py-6 justify-end">
             <p className="text-white/50">GRAND TOTAL</p>
-            <h6 className="text-white">$ {total.toLocaleString()}</h6>
+            <h6 className="text-white">$ {purchasesTotal.toLocaleString()}</h6>
           </div>
         </div>
 

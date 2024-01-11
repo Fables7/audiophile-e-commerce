@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import classNames from "classnames";
+import Image from "next/image";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -187,7 +188,7 @@ const CheckoutCard = () => {
                 </FormItem>
               )}
             />
-            {form.getValues("paymentMethod") === "e-money" && (
+            {form.getValues("paymentMethod") === "e-money" ? (
               <div className="grid grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
@@ -213,6 +214,23 @@ const CheckoutCard = () => {
                     </FormItem>
                   )}
                 />
+              </div>
+            ) : (
+              <div className="flex gap-10 ">
+                <div className="w-[48px] relative">
+                  <Image
+                    src="/assets/checkout/icon-cash-on-delivery.svg"
+                    alt="icon cash on delivery"
+                    objectFit="contain"
+                    fill
+                  />
+                </div>
+                <p className="text-black/50 w-[554px]">
+                  The ‘Cash on Delivery’ option enables you to pay in cash when
+                  our delivery courier arrives at your residence. Just make sure
+                  your address is correct so that your order will not be
+                  cancelled.
+                </p>
               </div>
             )}
           </form>

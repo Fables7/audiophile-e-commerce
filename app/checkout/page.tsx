@@ -9,8 +9,11 @@ import { useRouter } from "next/navigation";
 
 const CheckoutPage = () => {
   const cartLength = useSelector((state: RootState) => state.cart.cart.length);
+  const purchasesLength = useSelector(
+    (state: RootState) => state.cart.purchases.items.length
+  );
   const router = useRouter();
-  if (cartLength === 0) {
+  if (cartLength === 0 && purchasesLength === 0) {
     router.push("/home");
   }
   return (

@@ -10,6 +10,7 @@ interface CartItemProps {
   id: string;
   quantity: number;
   checkout?: boolean;
+  short?: string;
 }
 
 const CartItem = ({
@@ -19,6 +20,7 @@ const CartItem = ({
   id,
   quantity,
   checkout,
+  short,
 }: CartItemProps) => {
   const [count, setCount] = React.useState(quantity);
   return (
@@ -32,7 +34,7 @@ const CartItem = ({
           height={64}
         />
         <div>
-          <p className="text-black font-bold uppercase">{name}</p>
+          <p className="text-black font-bold uppercase">{short || name}</p>
           <p className="text-black/50 font-bold">
             $ {(price * count).toLocaleString()}
           </p>
