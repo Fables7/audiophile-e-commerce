@@ -1,11 +1,9 @@
-import React from "react";
-import Wrapper from "@/components/Wrapper";
-import ProductItem from "@/components/ProductItem";
 import ProductDetails from "@/components/ProductDetails";
-import ProductSuggestions from "@/components/ProductSuggestions";
+import ProductItem, { ProductItemProps } from "@/components/ProductItem";
 import ProductNav from "@/components/ProductNav";
+import ProductSuggestions from "@/components/ProductSuggestions";
 import SiteInfo from "@/components/SiteInfo";
-import { ProductItemProps } from "@/components/ProductItem";
+import Wrapper from "@/components/Wrapper";
 
 interface Props {
   product?: ProductItemProps;

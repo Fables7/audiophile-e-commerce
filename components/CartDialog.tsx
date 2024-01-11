@@ -9,13 +9,21 @@ import CartTotal from "./CartTotal";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/cart";
 import { ScrollArea } from "./ui/scroll-area";
+import { useDispatch } from "react-redux";
+import { clearCart } from "@/store/cart";
 
 const CartDialog = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.cart);
   return (
     <ScrollArea>
       <div className="flex flex-col gap-6">
-        <h6>cart ({cart.length})</h6>
+        <div className="flex justify-between items-start">
+          <h6>cart ({cart.length})</h6>
+          <button onClick={() => dispatch(clearCart())}>
+            <p className="text-black/50 underline">Remove all</p>
+          </button>
+        </div>
 
         <div className="flex flex-col gap-6 max-h-[300px] overflow-auto">
           {cart.map((item, index) => (

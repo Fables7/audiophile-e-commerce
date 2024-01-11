@@ -6,6 +6,7 @@ import CheckoutSummary from "./components/CheckoutSummary";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/cart";
 import { useRouter } from "next/navigation";
+import BackNav from "@/components/BackNav";
 
 const CheckoutPage = () => {
   const cartLength = useSelector((state: RootState) => state.cart.cart.length);
@@ -18,9 +19,12 @@ const CheckoutPage = () => {
   }
   return (
     <div className="border-2 bg-[var(--med-gray)]">
-      <Wrapper className="flex-row gap-0 justify-between">
-        <CheckoutCard />
-        <CheckoutSummary />
+      <Wrapper className="gap-0 pt-10">
+        <BackNav />
+        <div className="flex-row flex gap-0 justify-between">
+          <CheckoutCard />
+          <CheckoutSummary />
+        </div>
       </Wrapper>
     </div>
   );

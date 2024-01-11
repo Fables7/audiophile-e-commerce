@@ -36,6 +36,7 @@ const SuccessModal = ({ total }: { total: number }) => {
     <Dialog open={open}>
       <DialogTrigger>
         <Button
+          className="w-full"
           onClick={() => {
             setOpen(true);
             dispatch(purchaseItems());

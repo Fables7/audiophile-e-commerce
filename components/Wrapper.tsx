@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 const Wrapper = ({
   children,
@@ -10,7 +10,9 @@ const Wrapper = ({
 }) => {
   return (
     <div className="flex  justify-center">
-      <div className={cn("w-[1110px] flex flex-col gap-32 py-40", className)}>
+      <div
+        className={cn("w-[1110px] flex flex-col gap-32 pt-28 pb-40", className)}
+      >
         {children}
       </div>
     </div>
