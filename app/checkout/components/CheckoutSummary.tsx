@@ -7,6 +7,7 @@ import CartDetail from "@/components/CartDetail";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/cart";
 import CartItem from "@/components/CartItem";
+import SuccessModal from "./SuccessModal";
 
 const CheckoutSummary = () => {
   const total = useSelector((state: RootState) => state.cart.total);
@@ -36,7 +37,7 @@ const CheckoutSummary = () => {
           <CartTotal vat={20} />
         </div>
         <CartDetail total label="grand total" price={total + shipping} />
-        <Button disabled={total === 0}>Continue & pay</Button>
+        <SuccessModal total={total} />
       </CardContent>
     </Card>
   );

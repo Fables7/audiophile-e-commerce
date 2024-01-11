@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className="w-[1110px] flex  justify-between relative h-full">
         <Image src={logo} alt={"logo"} height={25} />
         <NavMenu />
-        <DialogTrigger>
+        <DialogTrigger >
           <Image src={ShoppingCart} alt="shopping cart" className="ml-16" />
         </DialogTrigger>
         <Separator className="absolute bottom-0 bg-[#3e3e3e]" />
