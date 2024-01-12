@@ -8,9 +8,9 @@ import Link from "next/link";
 const Xx99Mark2Headphones = () => {
   return (
     <div className=" h-fit relative  flex justify-center bg-[#141414] overflow-hidden ">
-      <div className=" h-full w-full bg-black opacity-20  absolute z-10"></div>
-      <div className="w-[1110px] relative flex items-center justify-end bg-blend-multiply ">
-        <div className="absolute left-0 z-20 flex flex-col gap-8">
+      <div className=" h-full w-full bg-black lg:opacity-20 md:opacity-60  absolute z-10"></div>
+      <div className="w-[1110px] h-[600px] relative flex items-center lg:justify-end bg-blend-multiply md:justify-center">
+        <div className="absolute lg:left-0 z-20 flex flex-col gap-8 lg:items-start md:items-center">
           <p className="over-line">New Product</p>
           <h1 className="text-white">
             XX99 MARK II <br />
@@ -26,13 +26,14 @@ const Xx99Mark2Headphones = () => {
             </Link>
           </div>
         </div>
-        <Image
-          className="mt-[-20px] "
-          src={desktop}
-          alt="XX99 Mark II Headphones"
-          // width={1153}
-          height={600}
-        />
+        <div className="h-[600px] md:h-[710px] lg:h-[600px]">
+          <Image
+            className="mt-[-20px] w-full h-full object-cover"
+            src={desktop}
+            alt="XX99 Mark II Headphones"
+            // width={1153}
+          />
+        </div>
       </div>
     </div>
   );

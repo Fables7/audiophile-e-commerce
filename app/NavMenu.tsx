@@ -12,7 +12,7 @@ import React from "react";
 
 const NavMenu = () => {
   return (
-    <NavigationMenu >
+    <NavigationMenu className="lg:flex hidden">
       <NavigationMenuList className="text-white subtitle ">
         <NavigationMenuItem>
           <Link href="/home" passHref legacyBehavior>
