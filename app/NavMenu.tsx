@@ -9,10 +9,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import React from "react";
+import { cn } from "@/lib/utils";
 
-const NavMenu = () => {
+const NavMenu = ({ className }: { className?: string }) => {
   return (
-    <NavigationMenu className="lg:flex hidden">
+    <NavigationMenu className={className}>
       <NavigationMenuList className="text-white subtitle ">
         <NavigationMenuItem>
           <Link href="/home" passHref legacyBehavior>

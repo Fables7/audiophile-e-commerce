@@ -19,7 +19,7 @@ const NavBar = () => {
           height={25}
           className="lg:m-0 md:mr-auto md:ml-10"
         />
-        <NavMenu />
+        <NavMenu className="lg:flex hidden" />
         <DialogTrigger>
           <Image src={ShoppingCart} alt="shopping cart" className="ml-16" />
         </DialogTrigger>

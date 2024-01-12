@@ -94,13 +94,13 @@
   h4,
   h5,
   h6 {
-    @apply font-bold uppercase;
+    @apply font-bold uppercase lg:text-left text-center;
   }
   h1 {
-    @apply text-[2.25rem] md:text-[3.5rem] lg:text-left text-center   tracking-[2px] leading-[60px];
+    @apply text-[2.25rem] md:text-[3.5rem]   tracking-[2px] leading-[60px];
   }
   h2 {
-    @apply text-[2.5rem]  tracking-[1.5px] leading-[40px];
+    @apply text-[2.5rem]  tracking-[1.5px]  leading-[40px];
   }
   h3 {
     @apply text-[2rem]  tracking-[1.15px];
