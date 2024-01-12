@@ -12,7 +12,7 @@ const Wrapper = ({
     <div className="flex  justify-center">
       <div
         className={cn(
-          "lg:w-[1110px] md:w-[768px] flex flex-col gap-32 pt-28 pb-40 ",
+          "lg:w-[1110px] md:w-[689px] flex flex-col gap-32 pt-28 pb-40 ",
           className
         )}
       >

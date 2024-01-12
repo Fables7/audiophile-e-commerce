@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div>
       <Xx99Mark2Headphones />
-      <Wrapper>
+      <Wrapper className="pt-2">
         <ProductNav />
         <HomeProducts />
         <SiteInfo />

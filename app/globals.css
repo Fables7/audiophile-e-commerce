@@ -97,7 +97,7 @@
     @apply font-bold uppercase;
   }
   h1 {
-    @apply text-[2.25rem] md:text-[3.5rem] lg:text-left text-center  tracking-[2px] leading-[60px];
+    @apply text-[2.25rem] md:text-[3.5rem] lg:text-left text-center   tracking-[2px] leading-[60px];
   }
   h2 {
     @apply text-[2.5rem]  tracking-[1.5px] leading-[40px];
